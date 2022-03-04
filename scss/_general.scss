@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  color: #555;
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0.7rem 1.6rem;
+}
+
+::placeholder {
+  color: green;
+}

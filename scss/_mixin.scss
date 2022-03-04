@@ -1,10 +1,14 @@
-@mixin header2 {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+$tablet: 1040px;
+$mobile: 500px;
 
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: #0b7285;
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
 }

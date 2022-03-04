@@ -1,0 +1,169 @@
+@import "mixin.scss";
+@import "var.scss";
+@import "general.scss";
+
+//----HEADER ----
+header {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+    }
+    .logo {
+      width: 5rem;
+      img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        transition: all 0.5s ease;
+        transform-origin: 50% 50%;
+        @include mobile {
+          pointer-events: none;
+          transition: none;
+        }
+        &:hover {
+          transform: scale(1.4);
+        }
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2rem;
+      @include mobile {
+        flex-direction: column;
+        pointer-events: none;
+      }
+      a {
+        color: #555;
+        text-decoration: none;
+        &:hover {
+          color: #72ccc4;
+        }
+      }
+    }
+  }
+}
+
+// --- MAIN ----
+main {
+  // --- SECTION RED ----
+  .section-red {
+    background-color: $crvena;
+    height: 50rem;
+    .red-heading {
+      padding-top: 12rem;
+      width: 95%;
+      h1 {
+        text-transform: uppercase;
+        width: 100%;
+        font-size: 3.2rem;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+  //--- SECTION BLUE ----
+  .section-blue {
+    background-color: $plava;
+    height: 40rem;
+    @include tablet {
+      height: 50rem;
+    }
+    @include mobile {
+      height: 75rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 5rem;
+      padding-top: 5rem;
+      color: white;
+      text-transform: uppercase;
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-item {
+        display: flex;
+        gap: 5rem;
+        align-items: center;
+        @include tablet {
+          flex-direction: column;
+        }
+        @include mobile {
+          gap: 2rem;
+        }
+      }
+      .frame {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        background-color: #555;
+        align-self: center;
+        z-index: 2;
+        @include tablet {
+          width: 10rem;
+          height: 10rem;
+        }
+        @include mobile {
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+      img {
+        z-index: 3;
+        padding: 2.2rem;
+        @include tablet {
+          width: 10rem;
+        }
+        @include mobile {
+          width: 8rem;
+        }
+      }
+    }
+  }
+
+  //----SECTION CONTACT ----
+  .section-contact {
+    padding: 4rem;
+    .form {
+      text-align: center;
+      h2 {
+        text-transform: uppercase;
+      }
+      p {
+        color: gray;
+        margin-bottom: 1.4rem;
+      }
+      form {
+        padding: 2rem;
+        background-color: #d5d5d5;
+        .box {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: center;
+          column-gap: 1rem;
+          row-gap: 1.4rem;
+          @include mobile {
+            grid-template-columns: 1fr;
+          }
+          textarea {
+            grid-column: 1/-1;
+            grid-row: 2;
+            height: 40%;
+            resize: none;
+            align-self: flex-start;
+          }
+          input,
+          textarea {
+            padding: 1rem 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
